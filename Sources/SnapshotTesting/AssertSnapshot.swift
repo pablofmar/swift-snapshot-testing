@@ -204,8 +204,8 @@ public func verifySnapshot<Value, Format>(
       snapshotDirectory.map { URL(fileURLWithPath: $0, isDirectory: true) }
       ?? fileUrl
       .deletingLastPathComponent()
-      .appendingPathComponent("__Snapshots__")
-      .appendingPathComponent(fileName)
+      .appendingPathComponent("__Snapshots__", isDirectory: true)
+      .appendingPathComponent(fileName, isDirectory: true)
 
     let identifier: String
     if let name = name {
